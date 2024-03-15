@@ -16,7 +16,7 @@ export async function postLoader({ params }) {
 
   // Fetch comments specifically for this post using postId
   const commentsResponse = await fetch(`http://localhost:3000/comments?postId=${postId}`);
-let comments = await commentsResponse.json();
+  let comments = await commentsResponse.json();
 
   // Fetching all users data might not be necessary if you're fetching a specific user above
   // const usersResponse = await fetch("http://localhost:3000/users");
@@ -59,7 +59,7 @@ export const Post = () => {
             return (
               <div key={comment.id} className="comment">
                 <p>
-                  <Link to={`/user/${comment.userId}`}>{comment.commenterName} commented:</Link> {/* Display commenter's name */}
+                  <Link to={`/user/${comment.userId}`}>{comment.commenterName} commented:</Link> {/*✅ Display commenter's name */}
                 </p>
                 <p>{comment.comment}</p>
                 <hr />
